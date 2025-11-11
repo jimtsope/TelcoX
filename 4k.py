@@ -1,7 +1,7 @@
 import pymysql
 from collections import OrderedDict, defaultdict
 
-DB = dict(host="localhost", user="root", password="Vethelor84!", database="Assignment_1", charset="utf8mb4")
+DB = dict(host="localhost", user="root", password="*********", database="Assignment_1", charset="utf8mb4")
 
 def safe_ratio(n, d): return 0.0 if not d else n / d
 
@@ -42,4 +42,5 @@ conn.close()
 print(f"{'City_id':>7} | {'Duration_ratio':>15} | {'Population_ratio':>17}")
 for cid, pop in city_population.items():
     dur = city_seconds.get(cid, 0)
+
     print(f"{cid:7d} | {safe_ratio(dur, total_sec):15.6f} | {safe_ratio(pop, total_pop):17.6f}")
